@@ -1,0 +1,163 @@
+body {
+    
+    background-image: url(/static/background1.jpg) ;
+    background-size: auto 100%;
+    background-attachment: fixed;
+    height: 100%;
+    background-repeat: no-repeat ;
+    color: white;
+    background-position: center;
+    
+}
+
+.container1 {
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.date{
+    
+    text-align: center;
+}
+.parent, .child1{
+    display: flex;
+    justify-content: centre;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li{
+    margin-bottom: 25px;
+}
+
+.card{
+    background-color: rgb(36, 36, 141);
+}
+
+.logo {
+    text-align: center;
+}
+.iconsrow {
+    display: flex;              /* Use Flexbox for alignment */
+    justify-content: flex-end;  /* Align items to the right */
+    gap: 10px;                 /* Adjust spacing between icons */
+    padding: 10px;             /* Optional: add some padding around */
+    margin-right: -150px;
+}
+
+.fa{
+    color: black;
+}
+
+input, .inputsign {
+    background-color: rgba(215, 215, 233, 0.938);
+}
+
+
+/*.iconsrow{
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+.iconsrow2{
+    margin: 0px;
+    padding: 0;
+    text-align: center;
+}*/
+.testing{
+    width: 30px;
+}
+
+.modal1{
+    background-color: rgb(182, 114, 26);
+}
+
+.loginOption{
+    height: 10vh;
+    background-color: blue;
+}
+
+img{
+    height: 10vh;
+    width: 5vw;
+    border-radius: 50%50%;
+    
+    object-fit: cover;
+    margin-left: -50%;
+    border: 2px solid rgb(13, 250, 13);
+    
+}
+
+.loginbutton{
+    height: 10vh;
+    width: 100%;
+    background-color: red;
+    border: red;
+    border-radius: 15px;
+}
+
+.loginbox{
+    height: 10vh;
+    border: 2px solid rgb(13, 250, 13);
+    background-color: rgb(65, 52, 35);
+    border-radius: 1.5vh;
+}
+.username{
+    color: rgb(13, 250, 13) ;
+    font-size: 2vw;
+    margin-right: 100%;
+    margin-left: -20%;
+    margin-top: 3vh;
+    bottom: 50%;
+}
+
+.firstletter{
+    font-size: 95px;
+   padding-top: 50px;
+}
+
+@media  screen and (max-width: 900px ) {
+    .middlecolumn{
+        width: 100vw;
+    }
+
+    .img{
+        height: 10vh;
+        width:30vw;
+        margin-left: -50vw;
+    }
+
+    .loginbox{
+        
+        width:100vw;
+    }
+
+    .username{
+        font-size: 5em;
+        margin-right: 10%;
+        margin-left: -50vw;
+    }
+
+    .column1, .lastcolumn{
+        visibility: collapse;
+    }
+
+    .filterButtons{
+        width: max-content;
+    }
+
+    .filterrow{
+        column-gap: 1%;
+    }
+
+    .firstcolumn{
+        width: 100vw;
+    }
+}

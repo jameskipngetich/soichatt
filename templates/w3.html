@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic styling for the chat container */
+.chat-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #fff;
+}
+
+.sent {
+  background-color: #e1f5fe;
+  align-self: flex-start;
+}
+
+.status {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.checkmark {
+  font-size: 16px;
+  color: #808080; /* Default grey */
+  transition: color 0.3s ease-in-out;
+}
+
+.checkmark.read-check {
+  color: blue; /* Blue check for read status */
+}
+
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="message sent" id="message1">
+      <p>Hello! How are you?</p>
+      <div class="status">
+        <span class="checkmark sent-check">&#10004;</span> <!-- Grey check mark -->
+        <span class="checkmark delivered-check">&#10004;</span> <!-- Grey check mark -->
+        <span class="checkmark read-check">&#10004;</span> <!-- Blue check mark -->
+      </div>
+    </div>
+  </div>
+
+  <script >
+    // Simulate the different states for the message
+window.onload = () => {
+  const message1 = document.getElementById('message1');
+  const sentCheck = message1.querySelector('.sent-check');
+  const deliveredCheck = message1.querySelector('.delivered-check');
+  const readCheck = message1.querySelector('.read-check');
+
+  // Simulate message sent
+  setTimeout(() => {
+    sentCheck.style.color = 'grey'; // Already grey, so no need to change
+  }, 1000); // Message is sent immediately
+
+  // Simulate message delivered (after 3 seconds)
+  setTimeout(() => {
+    deliveredCheck.style.color = 'grey'; // Grey check mark for delivery
+  }, 30000);
+
+  // Simulate message read (after 6 seconds)
+  setTimeout(() => {
+    readCheck.style.color = 'blue'; // Change to blue when read
+  }, 60000);
+};
+
+  </script>
+</body>
+</html>

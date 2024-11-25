@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Layout</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.sender {
+    background-color: #dcf8c6;
+    align-self: flex-start;
+}
+
+.receiver {
+    background-color: #fff;
+    align-self: flex-end;
+    border: 1px solid #ddd;
+}
+
+/* Flexbox for layout */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-bubble {
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-bubble sender">
+            <p>Hey, how are you?</p>
+        </div>
+        <div class="chat-bubble receiver">
+            <p>I’m good, thanks! How about you?</p>
+        </div>
+        <div class="chat-bubble sender">
+            <p>I’m great! Want to catch up later?</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+body, .mainrow{
+    
+    background-size: 100% auto;
+    height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.chatButtons{
+    padding-top: 50px;
+}
+.filterButtons{
+    width: max-content;
+    border-radius: 15px;
+    font-size: 1em;
+    
+}
+.filterrow{
+    display: flexbox;
+    column-gap: 0.5%;
+   
+}
+nav{
+    height: 100px;
+}
+h4{
+    font-size: 45px;
+    font-weight: 300;
+    padding-top: 20px;
+    color: black;
+}
+.fa{
+    margin-left: 15px;
+    color: black;
+}
+/**/.sender {
+    background-color: #0e140a;
+    align-self: flex-start;
+    width: max-content;
+}
+
+.receiver {
+    background-color: #1cc267;
+    align-self: flex-end;
+    border: 1px solid #ddd;
+    width: max-content;
+    height: max-content;
+}
+.chat-bubble {
+    display: inline-block;
+}
+.chat-bubble {
+    
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    max-width: 60%;
+    word-wrap: break-word;
+    
+}
+.chat-container {
+    overflow: scroll;
+    background-attachment: fixed;
+    background-size: auto 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 85vh;
+    background-color: transparent;/*rgb(197, 32, 32)*/
+    
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.chat-container {
+    background-image: url(/static/background5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.messagerow{
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    
+    bottom: 0%;
+    top: 100%;
+
+}
+.colum{
+    background-attachment: fixed;
+
+    
+}
+
+
+.headrow{
+    height: 10vh;
+}
+
+.chatname{
+    font-size: 45px;
+    padding-top: 10px;
+}
+
+.sidebar{
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    
+
+}
+.main{
+    width: 100%;
+    transition: margin-left .5s;
+    transition: width .0ms;
+}

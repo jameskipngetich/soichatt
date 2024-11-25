@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SoiChatt</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon2.ico">
+
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="/static/index.css">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
+</head>
+<body>
+    <div class="container-fluid container1">
+        <div class="row">
+            <div class="col-sm-4 column1" ></div>
+            <div class="col-sm-4 middlecolumn" >
+                <div class="row">
+                    <header>
+                        <p class="date">18 Oct 2024</p>
+                    </header>
+                    
+                </div>
+                
+                <div class="row parent">
+                    <div class="row child1">
+                        <ul>
+                        {%for row in users%}
+                            <li>
+                                <button data-bs-toggle="modal" data-bs-target="#loginModal{{row[0]}}" class="loginbutton">
+                                    <div class="row loginbox">
+                                        <div class="col-sm-4">
+                                            <img src="/static/profilephoto2.jpeg" alt="profile"> 
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <h6 class="username">{{row[2]}}</h6>
+                                        </div>
+                                    </div>
+                                </button>
+                                
+                            </li>
+                            <!--Modal for loging in-->
+                            <div class="modal fade " id="loginModal{{row[0]}}" tabindex="-1" aria-labelledby="loginModal{{row[0]}}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content modal1">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="updateClassModalLabel">{{row[2]}}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <form action="{{url_for('login')}}" method="post">
+                                            <div class="modal-body">
+                                                <label for="password">Password</label>
+                                                <input type="text" name="userName" value="{{row[2]}}" class="form-control" hidden>
+                                                <input type="password" id="password" name="password" class="form-control" placeholder="your password">
+                                            </div>
+                                            <div class="modal-footer justify-content-between" >
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-success" type="submit">Log in</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End of loging in modal-->
+                        {%endfor%}
+                            
+                            
+
+
+                            <li>
+                                <p><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal">not here?</a></p>
+                            </li>
+                            
+                            
+                            
+                        </ul>
+                         
+                    </div>
+                   <!-- <footer>
+                        <p class="logo"><img src="/static/profilephoto.jpg" alt="profile"><span class="firstletter">S</span>oi</p>
+                    </footer>-->
+                    
+                    <div class="modal fade" id="signupModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content modal1">
+                                <div class="modal-header">
+                                    <h5>Signup</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                                </div>
+                                <form action="{{url_for('signup')}}" method="post">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label for="fullName">Full Name</label>
+                                                <input type="text" id="fullName" class=" inputsign form-control " name="fullName" placeholder="eg.John Ripper" required>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label for="userName">User Name</label>
+                                                <input type="text" id="userName" class="inputsign form-control " name="userName" placeholder="eg.johnTheRipper" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" class="inputsign form-control" name="email" placeholder="eg. johnTheRipper@soichat.com" required>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" class="inputsign form-control" name="password" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="AOB">Tell us Something</label>
+                                            <textarea name="AOB" id="AOB" class="inputsign form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-success">Signup</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+
+               
+
+                
+                
+
+            </div>
+            <div class="col-sm-4 lastcolumn collapse">
+                <div class="row iconsrow">
+                     
+                    <div class="col-sm-2" ><i class="" aria-hidden="true"></i></div> <!--fa fa-bug-->
+                   
+                    <div class="col-sm-2" ><a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fa fa-home" aria-hidden="true">Signup</i></a></div>  
+                    <div class="col-sm-2 " style="margin-left: -50px;"><i class="fa fa-comments" aria-hidden="true">Contactus</i></div>
+                    <div class="col-sm-2" ><i class="" aria-hidden="true"></i></div> <!--fa fa-wifi-->
+                </div>
+            </div>
+            
+            <!--<div class="col-sm-4" >
+                <div class="row iconsrow">
+                    
+
+                   <div class="col iconsrow2 testing"><i class="fa fa-home" aria-hidden="true" ></i></div>  
+                    <div class="col iconsrow2 testing"><i class="fa fa-comments" aria-hidden="true"></i></div> 
+                   <div class="col iconsrow2 testing"><i class="fa fa-bug" aria-hidden="true"></i></div> 
+                    <div class="col iconsrow2 testing"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+
+
+
+                    <i class="lab la-linux"></i>
+                    
+                </div>
+            </div>-->
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- UNKNOWN TAGS THAT MAYBE USEFULL SOMEDAY
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>-->
